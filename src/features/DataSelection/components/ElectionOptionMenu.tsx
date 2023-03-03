@@ -5,7 +5,7 @@ import { Menu } from '../../../components';
 export function ElectionOptionMenu() {
 	return (
 		<Menu>
-			<Menu.Button >
+			<Menu.Button w="full">
 				<Flex>Election Data</Flex>
 			</Menu.Button>
 			<Menu.List>

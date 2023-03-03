@@ -9,7 +9,7 @@ const years = generateYearsArray();
 export function ElectionYearMenu() {
 	return (
 		<Menu>
-			<Menu.Button>
+			<Menu.Button w="full">
 				<Flex>2023</Flex>
 			</Menu.Button>
 			<Menu.List>

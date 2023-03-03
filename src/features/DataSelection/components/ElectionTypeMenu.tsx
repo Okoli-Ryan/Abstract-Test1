@@ -6,9 +6,9 @@ import { Menu } from '../../../components';
 
 export function ElectionTypeMenu() {
   return (
-    <Menu>
-			<Menu.Button >
-				<Flex>Election Data</Flex>
+		<Menu>
+			<Menu.Button w="full">
+				<Flex>Presidential</Flex>
 			</Menu.Button>
 			<Menu.List>
 				<Menu.Item>Presidential</Menu.Item>
@@ -17,5 +17,5 @@ export function ElectionTypeMenu() {
 				<Menu.Item>House of Representatives</Menu.Item>
 			</Menu.List>
 		</Menu>
-  )
+  );
 }
