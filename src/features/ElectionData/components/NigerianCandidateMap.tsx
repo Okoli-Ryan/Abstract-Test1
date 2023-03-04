@@ -4,14 +4,20 @@ import MapImage from "../../../assets/images/MapImage.svg";
 
 export function NigerianCandidateMap() {
 	return (
-		<GridItem colSpan={4} className="bordered" p="4">
+		<GridItem
+			colSpan={{
+				base: 36,
+				lg: 16,
+			}}
+			className="bordered"
+			p="4">
 			<Grid templateColumns={"repeat(8, 1fr)"}>
 				<GridItem colSpan={5}>
-					<VStack>
+					<VStack w="full">
 						<Text fontSize="sm" textTransform="uppercase">
 							Candidates by Geopolitical zones
 						</Text>
-						<Image src={MapImage} pt="16px" />
+						<Image src={MapImage} pt="16px" display="flex" alignSelf="self-start" />
 					</VStack>
 				</GridItem>
 				<GridItem colSpan={3}>
@@ -36,7 +42,7 @@ interface ICandidateComponentProps {
 
 function CandidateComponent({ color, region }: Partial<ICandidateComponentProps>) {
 	return (
-		<HStack w="full" justifyContent="space-between">
+		<HStack w="full" maxW="40" justifyContent="space-between">
 			<HStack gap={2}>
 				<Box w="8" h="4" bg={color} />
 				<Text w="max-content" fontSize="x-small" fontWeight="bold">

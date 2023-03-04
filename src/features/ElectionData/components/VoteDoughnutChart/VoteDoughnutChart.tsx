@@ -9,16 +9,31 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 export function VoteDoughnutChart() {
 	return (
-		<GridItem colSpan={3} maxH="25rem" className="bordered" p="4" pos="relative">
+		<GridItem
+			colSpan={{
+				base: 36,
+				lg: 12,
+			}}
+			className="bordered"
+			display="flex"
+			justifyContent="center"
+			alignItems="center"
+			p="4"
+			pos="relative">
 			<Doughnut data={data} options={options} />
 			<Center
 				borderRadius="full"
 				borderWidth={1}
-				w="13vw"
-				h="13vw"
+				w="12vw"
+				h="12vw"
+				minW={36}
+				minH={36}
 				pos="absolute"
-				left="25%"
-				top="25%">
+				right={0}
+				m="auto"
+				top={3}
+				bottom={0}
+				left={0}>
 				<VStack>
 					<Text textAlign="center" textTransform="uppercase">
 						Total Votes

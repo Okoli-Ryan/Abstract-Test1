@@ -15,14 +15,15 @@ export const options: IOptions = {
 	rotation: 45,
 	maintainAspectRatio: true,
 	responsive: true,
-	cutout: 120,
+	cutout: "75%",
+	borderColor: "transparent",
 };
 
 export const data: ChartData<"doughnut", number[], unknown> = {
 	datasets: [
 		{
 			data: [160512222, 8400000],
-			backgroundColor: ["#449352", "#2249d1"],
+			backgroundColor: ["#449352", "#E30325"],
 		},
 	],
 };

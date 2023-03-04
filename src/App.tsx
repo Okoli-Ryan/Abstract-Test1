@@ -1,7 +1,9 @@
 import { Box, Container } from '@chakra-ui/react';
 
 import DataSelection from "./features/DataSelection";
+import ElectionData from "./features/ElectionData";
 import Header from "./features/Header";
+import NigerianMap from "./features/NigerianMap";
 
 function App() {
 	return (
@@ -9,8 +11,8 @@ function App() {
 			<Container>
 				<Header />
 				<DataSelection />
-				{/* <NigerianMap /> */}
-				{/* <ElectionData /> */}
+				<NigerianMap />
+				<ElectionData />
 			</Container>
 			{/* <Footer /> */}
 		</Box>
