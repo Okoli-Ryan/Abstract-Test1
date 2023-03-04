@@ -15,7 +15,6 @@ import {
 } from "@chakra-ui/react";
 
 import Person1 from "../../../assets/icons/person1.svg";
-import Person2 from "../../../assets/icons/person2.svg";
 import Person3 from "../../../assets/icons/person3.svg";
 import Person4 from "../../../assets/icons/person4.svg";
 
@@ -92,7 +91,7 @@ const CommunitiesDataList = [
 	},
 	{
 		key: "2",
-		icon: Person2,
+		icon: Person1,
 		heading: "Election Candidates",
 		description: "Odio mi in id tellus turpis elementum ipsum.",
 	},
