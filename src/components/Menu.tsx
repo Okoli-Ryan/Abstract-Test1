@@ -38,6 +38,7 @@ function MenuList(props: MenuListProps) {
 			borderColor="brand.100"
 			borderWidth="2px"
 			bg="brand.light"
+			zIndex={20}
 			overflowY="auto"
 			maxH="20em"
 			{...props}>

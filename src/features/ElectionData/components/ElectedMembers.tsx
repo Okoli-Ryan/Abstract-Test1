@@ -4,7 +4,7 @@ import { GridItem, HStack, Text, VStack } from "@chakra-ui/react";
 
 export function ElectedMembers() {
 	return (
-		<GridItem colSpan={2} className="bordered" p="4" py="8">
+		<GridItem colSpan={2} className="bordered" p="4" py="8" maxH="25rem">
 			<VStack gap="4">
 				<MemberComponent title="Total Elected Members" count="10,000" />
 				<MemberComponent

@@ -2,6 +2,7 @@ import { extendTheme } from "@chakra-ui/react";
 
 import { ButtonTheme } from "./Button.theme";
 import { ContainerTheme } from "./Container.theme";
+import { LinkTheme } from "./Link.theme";
 import { TextTheme } from "./Text.theme";
 
 export const Theme = extendTheme({
@@ -31,5 +32,6 @@ export const Theme = extendTheme({
 		Text: TextTheme,
 		Container: ContainerTheme,
 		Button: ButtonTheme,
+		Link: LinkTheme,
 	},
 });

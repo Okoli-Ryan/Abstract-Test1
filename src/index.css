@@ -1,0 +1,16 @@
+#map_zoom {
+    /* max-height: 100px; */
+    left: unset !important;
+    right: -8% !important
+}
+
+@media screen and (max-width:640px) {
+    #map_zoom {
+        transform: scale(.3);
+    }
+}
+@media screen and (max-width:960px) {
+    #map_zoom {
+        transform: scale(.8);
+    }
+}
