@@ -24,7 +24,16 @@ export function OurCommunities() {
 		<>
 			<Popover>
 				<PopoverTrigger>
-					<Button variant="ghost" rightIcon={<IoCaretDownSharp />}>
+					<Button
+						variant="ghost"
+						color="white"
+						fontWeight="bold"
+						textTransform="uppercase"
+						px={0}
+						_hover={{
+							bg: "unset",
+						}}
+						rightIcon={<IoCaretDownSharp />}>
 						Our Communities
 					</Button>
 				</PopoverTrigger>

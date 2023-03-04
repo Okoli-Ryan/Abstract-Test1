@@ -1,6 +1,6 @@
 import { IoCaretDownSharp } from "react-icons/io5";
 
-import { Flex, Text } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 
 import { Menu } from "../../../components";
 
@@ -8,15 +8,17 @@ export function ElectionDataHeader() {
 	return (
 		<Menu>
 			<Menu.Button
-				as={"div"}
+				as={Button}
+				color="white"
+				fontWeight="bold"
+				textTransform="uppercase"
+				rightIcon={<IoCaretDownSharp />}
 				borderWidth={0}
+				px={0}
 				_hover={{
-					bg: "brand.dark",
+					bg: "unset",
 				}}>
-				<Flex alignItems="center" gap={2}>
-					<Text>Election Data</Text>
-					<IoCaretDownSharp />
-				</Flex>
+				Election Data
 			</Menu.Button>
 			<Menu.List>
 				<Menu.ItemLight>Election Day Live Updates</Menu.ItemLight>

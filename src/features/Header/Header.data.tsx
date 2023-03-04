@@ -4,7 +4,11 @@ import { ElectionDataHeader, OurCommunities } from "./components";
 
 export const NavLinks = [
 	{
-		component: <Link>About us</Link>,
+		component: (
+			<Link textTransform="uppercase" fontWeight="bold">
+				About us
+			</Link>
+		),
 	},
 	{
 		component: <OurCommunities />,
@@ -13,9 +17,17 @@ export const NavLinks = [
 		component: <ElectionDataHeader />,
 	},
 	{
-		component: <Link>E-Buddy</Link>,
+		component: (
+			<Link textTransform="uppercase" fontWeight="bold">
+				E-Buddy
+			</Link>
+		),
 	},
 	{
-		component: <Link>Veo Platform</Link>,
+		component: (
+			<Link textTransform="uppercase" fontWeight="bold">
+				Veo Platform
+			</Link>
+		),
 	},
 ];
