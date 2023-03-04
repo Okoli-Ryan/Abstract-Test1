@@ -1,3 +1,7 @@
+* {
+    font-family: 'Jost';
+}
+
 #map_zoom {
     /* max-height: 100px; */
     left: unset !important;
