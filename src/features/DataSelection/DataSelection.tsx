@@ -21,15 +21,38 @@ export default function DataSelection() {
 					Presidential / 2023
 				</Text>
 			</HStack>
-			<Flex justifyContent="space-between" w="full" alignItems="center">
-				<Text fontSize="large">Presidential Race</Text>
-				<Flex justifyContent="flex-end" gap={4} w="full">
+			<Flex
+				justifyContent="space-between"
+				w="full"
+				alignItems="center"
+				gap={8}
+				flexDir={{
+					base: "column",
+					md: "row",
+				}}>
+				<Text
+					fontSize="large"
+					w={{
+						base: "100%",
+						md: "max-content",
+					}}
+					whiteSpace="nowrap">
+					Presidential Race
+				</Text>
+				<Flex
+					justifyContent="flex-end"
+					gap={4}
+					w="full"
+					flexDir={{
+						base: "column",
+						md: "row",
+					}}>
 					<ElectionOptionMenu />
 					<ElectionTypeMenu />
 					<ElectionYearMenu />
 				</Flex>
 			</Flex>
-			<Divider borderColor="whiteAlpha.300" pt="8" />
+			<Divider borderColor="whiteAlpha.300" pt="4" />
 		</VStack>
 	);
 }

@@ -1,5 +1,6 @@
 import { Box, Container } from '@chakra-ui/react';
 
+import DataSelection from "./features/DataSelection";
 import Header from "./features/Header";
 
 function App() {
@@ -7,9 +8,9 @@ function App() {
 		<Box bg="brand.light" w="100vw" h="100vh" overflowX="hidden">
 			<Container>
 				<Header />
-				{/* <DataSelection />
-				<NigerianMap />
-				<ElectionData /> */}
+				<DataSelection />
+				{/* <NigerianMap /> */}
+				{/* <ElectionData /> */}
 			</Container>
 			{/* <Footer /> */}
 		</Box>
