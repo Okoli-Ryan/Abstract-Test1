@@ -16,7 +16,8 @@ function MenuButton(
 			borderRadius="md"
 			as={Button}
 			borderWidth="1px"
-			maxW="64"
+			maxW="min-content"
+			minW="48"
 			bg="transparent"
 			color="white"
 			_hover={{
