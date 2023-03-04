@@ -4,7 +4,11 @@ import { FooterLinksData } from "./components/FooterLinks.data";
 
 export default function FooterLinks() {
 	return (
-		<GridItem colSpan={3}>
+		<GridItem
+			colSpan={{
+				base: 5,
+				md: 3,
+			}}>
 			<Grid templateColumns={"repeat(3, 1fr)"} gap={6}>
 				{FooterLinksData.map((linkData) => (
 					<VStack gap="2">

@@ -4,7 +4,11 @@ import Logo from "../../../../assets/images/Logo.png";
 
 export default function FooterDetails() {
 	return (
-		<GridItem colSpan={2}>
+		<GridItem
+			colSpan={{
+				base: 5,
+				md: 2,
+			}}>
 			<VStack justifyContent="flex-start">
 				<HStack w="full">
 					<Image src={Logo} />
