@@ -26,6 +26,10 @@ export function OurCommunities() {
 					<Button
 						variant="ghost"
 						color="white"
+						fontSize={{
+							base: "x-small",
+							xl: "sm",
+						}}
 						fontWeight="bold"
 						textTransform="uppercase"
 						px={0}

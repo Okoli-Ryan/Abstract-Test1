@@ -11,6 +11,10 @@ export function ElectionDataHeader() {
 				as={Button}
 				color="white"
 				fontWeight="bold"
+				fontSize={{
+					base: "x-small",
+					xl: "sm",
+				}}
 				textTransform="uppercase"
 				rightIcon={<IoCaretDownSharp />}
 				borderWidth={0}
