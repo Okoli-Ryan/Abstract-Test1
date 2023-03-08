@@ -1,13 +1,20 @@
-import { ArcElement, Chart as ChartJS, Legend, Tooltip } from "chart.js";
-import { Doughnut } from "react-chartjs-2";
+import { ArcElement, Chart as ChartJS, Legend, Tooltip } from 'chart.js';
+import { useMemo } from 'react';
+import { Doughnut } from 'react-chartjs-2';
 
-import { Center, GridItem, Text, VStack } from "@chakra-ui/react";
+import { Center, GridItem, Text, VStack } from '@chakra-ui/react';
 
-import { data, options } from "./VoteDoughnutChart.data";
+import { usePageContainerContext } from '../../../PageContainer/context';
+import { options, ParseData } from './VoteDoughnutChart.data';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 export function VoteDoughnutChart() {
+
+    const { presidentalResults} = usePageContainerContext()
+    const data = useMemo(() => ParseData(presidentalResults), [presidentalResults])
+    const totalCount = presidentalResults.reduce((prev, curr) => prev + curr.candidates_vote, 0)
+
 	return (
 		<GridItem
 			colSpan={{
@@ -39,7 +46,7 @@ export function VoteDoughnutChart() {
 						Total Votes
 					</Text>
 					<Text textAlign="center" fontSize="larger" fontWeight="bold">
-						168,192, 222
+						{totalCount}
 					</Text>
 				</VStack>
 			</Center>

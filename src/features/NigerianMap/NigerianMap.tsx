@@ -1,10 +1,12 @@
 import { Box, HStack, Text, VStack } from "@chakra-ui/react";
 
+import Map from "./Map";
+
 export default function NigerianMap() {
 	return (
 		<Box className="bordered" mt="8" pos="relative">
 			<Box w="75%" mx="auto" my="12">
-				<div id="map" />
+				<Map />
 			</Box>
 			<VStack pos="absolute" right="5%" bottom="5%">
 				<HStack w="full">

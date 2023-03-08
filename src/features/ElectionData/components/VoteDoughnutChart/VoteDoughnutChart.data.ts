@@ -1,4 +1,7 @@
-import { ChartData, ChartOptions } from "chart.js";
+import { ChartData, ChartOptions } from 'chart.js';
+
+import { IPresidentialResult, PoliticalPartyType } from '../../../../core';
+import { COLOR } from '../../../../core/Constants';
 
 export const options: IOptions = {
 	plugins: {
@@ -19,15 +22,24 @@ export const options: IOptions = {
 	borderColor: "transparent",
 };
 
-export const data: ChartData<"doughnut", number[], unknown> = {
-	datasets: [
-		{
-			data: [160512222, 8400000],
-			backgroundColor: ["#449352", "#E30325"],
-		},
-	],
+export const ParseData = (
+	data: IPresidentialResult[]
+): ChartData<"doughnut", number[], unknown> => {
+	const resultData = data.map((result) => result.candidates_vote);
+	return {
+		datasets: [
+			{
+				data: resultData,
+				backgroundColor: [COLOR.LP, COLOR.PDP, COLOR.APC],
+			},
+		],
+	};
 };
 
-const DataLabel = ["Accepted Votes", "Rejected Votes"];
+const DataLabel: PoliticalPartyType[] = [
+	"Labour Party",
+	"People's Democratic Party",
+	"All Progressives Congress",
+];
 
 type IOptions = ChartOptions<"doughnut">;

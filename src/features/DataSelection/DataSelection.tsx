@@ -1,6 +1,7 @@
 import { Divider, Flex, HStack, Text, VStack } from '@chakra-ui/react';
 
 import { ElectionOptionMenu, ElectionTypeMenu, ElectionYearMenu } from './components';
+import PresidentialRowChart from './components/PresidentialRowChart';
 
 export default function DataSelection() {
 	return (
@@ -21,6 +22,7 @@ export default function DataSelection() {
 					Presidential / 2023
 				</Text>
 			</HStack>
+            <PresidentialRowChart />
 			<Flex
 				justifyContent="space-between"
 				w="full"
