@@ -9,7 +9,7 @@ export const options: IOptions = {
 			callbacks: {
 				label: function (context) {
 					const label = DataLabel[context.dataIndex] || "";
-					const count = context.formattedValue;
+					const count = `${context.formattedValue} votes`;
 					return [label, count];
 				},
 			},
