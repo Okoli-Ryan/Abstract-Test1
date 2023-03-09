@@ -1,15 +1,6 @@
 import { useState } from "react";
 
-import {
-	Box,
-	Flex,
-	Popover,
-	PopoverArrow,
-	PopoverContent,
-	PopoverTrigger,
-	Text,
-	VStack,
-} from "@chakra-ui/react";
+import { Box, Flex, Text, Tooltip, VStack } from "@chakra-ui/react";
 
 import { IPresidentialResult } from "../../../core";
 import { COLOR } from "../../../core/Constants";
@@ -57,19 +48,11 @@ function PresidentialRowChartItem({ result, totalResult }: IPresidentialRowChart
 	if (result.political_party_name === "People's Democratic Party") partyKey = "PDP";
 
 	return (
-		<Popover isOpen={isOpen}>
-			<PopoverTrigger>
-				<Box
-					h="full"
-					w={`${percentageVote}%`}
-					bg={COLOR[partyKey]}
-					onMouseEnter={showPopOver}
-					onMouseLeave={hidePopOver}
-				/>
-			</PopoverTrigger>
-			<PopoverContent w="full" rounded="none">
-				<PopoverArrow />
-				<VStack w="full" p="4">
+		<Tooltip
+			bg="white"
+			isOpen={isOpen}
+			label={
+				<VStack w="full">
 					<Text color={COLOR[partyKey]}>
 						{result.full_name}, {partyKey}
 					</Text>
@@ -77,7 +60,14 @@ function PresidentialRowChartItem({ result, totalResult }: IPresidentialRowChart
 						{result.candidates_vote} votes, {percentageVote}%
 					</Text>
 				</VStack>
-			</PopoverContent>
-		</Popover>
+			}>
+			<Box
+				h="full"
+				w={`${percentageVote}%`}
+				bg={COLOR[partyKey]}
+				onMouseEnter={showPopOver}
+				onMouseLeave={hidePopOver}
+			/>
+		</Tooltip>
 	);
 }
