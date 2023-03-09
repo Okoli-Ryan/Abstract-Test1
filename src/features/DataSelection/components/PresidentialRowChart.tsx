@@ -1,12 +1,26 @@
-import { Box, Flex, Text, Tooltip, VStack } from '@chakra-ui/react';
+import { useState } from "react";
 
-import { IPresidentialResult } from '../../../core';
-import { COLOR } from '../../../core/Constants';
-import { usePageContainerContext } from '../../PageContainer/context';
+import {
+	Box,
+	Flex,
+	Popover,
+	PopoverArrow,
+	PopoverContent,
+	PopoverTrigger,
+	Text,
+	VStack,
+} from "@chakra-ui/react";
+
+import { IPresidentialResult } from "../../../core";
+import { COLOR } from "../../../core/Constants";
+import { usePageContainerContext } from "../../PageContainer/context";
 
 export default function PresidentialRowChart() {
 	const { presidentalResults } = usePageContainerContext();
-	const totalResult = presidentalResults.reduce((prev, curr) => prev + curr.candidates_vote, 0);
+	const totalResult =
+		presidentalResults.length === 0
+			? 0
+			: presidentalResults.reduce((prev, curr) => prev + curr.candidates_vote, 0);
 
 	return (
 		<VStack w="full" mt="4">
@@ -26,6 +40,16 @@ interface IPresidentialRowChartItem {
 }
 
 function PresidentialRowChartItem({ result, totalResult }: IPresidentialRowChartItem) {
+	const [isOpen, setIsOpen] = useState(false);
+
+	function showPopOver() {
+		setIsOpen(true);
+	}
+
+	function hidePopOver() {
+		setIsOpen(false);
+	}
+
 	const percentageVote = ((result.candidates_vote * 100) / totalResult).toFixed(1);
 	let partyKey: keyof typeof COLOR = "LP";
 	if (result.political_party_name === "All Progressives Congress") partyKey = "APC";
@@ -33,18 +57,27 @@ function PresidentialRowChartItem({ result, totalResult }: IPresidentialRowChart
 	if (result.political_party_name === "People's Democratic Party") partyKey = "PDP";
 
 	return (
-		<Tooltip
-			label={
-				<VStack>
-					<Text>
+		<Popover isOpen={isOpen}>
+			<PopoverTrigger>
+				<Box
+					h="full"
+					w={`${percentageVote}%`}
+					bg={COLOR[partyKey]}
+					onMouseEnter={showPopOver}
+					onMouseLeave={hidePopOver}
+				/>
+			</PopoverTrigger>
+			<PopoverContent w="full" rounded="none">
+				<PopoverArrow />
+				<VStack w="full" p="4">
+					<Text color={COLOR[partyKey]}>
 						{result.full_name}, {partyKey}
 					</Text>
-					<Text>
+					<Text color="#585858">
 						{result.candidates_vote} votes, {percentageVote}%
 					</Text>
 				</VStack>
-			}>
-			<Box h="full" w={`${percentageVote}%`} bg={COLOR[partyKey]} />
-		</Tooltip>
+			</PopoverContent>
+		</Popover>
 	);
 }

@@ -9030,7 +9030,7 @@ var simplemaps_countrymap_mapinfo = {
 								(q = r.findPos(e8)) && ((W = q[0]), (Y = q[1]));
 						},
 					})),
-				(G = a.navigation_color ? a.navigation_color : "#f7f7f7"),
+				(G = a.navigation_color ? a.navigation_color : "#ffffff"),
 				(ev = a.navigation_border_color ? a.navigation_border_color : "#636363"),
 				(ek = a.navigation_opacity ? a.navigation_opacity : 0.8),
 				(eY = a.arrow_color ? a.arrow_color : G),

@@ -14,12 +14,14 @@ export default function StateReultTable() {
 			<TableContainer>
 				<Table>
 					<Thead>
-						<Th fontSize="lg" py="6">
-							State Results
-						</Th>
+						<Tr>
+							<Th fontSize="lg" py="6">
+								State Results
+							</Th>
+						</Tr>
 					</Thead>
 					<Tbody>
-						<TableContainer>
+						<TableContainer p="3">
 							<Table>
 								<Thead>
 									<Tr>

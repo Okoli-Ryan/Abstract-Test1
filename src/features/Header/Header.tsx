@@ -15,8 +15,10 @@ export default function Header() {
 						base: "none",
 						lg: "flex",
 					}}>
-					{NavLinks.map(({ component }) => (
-						<Box px={2}>{component}</Box>
+					{NavLinks.map(({ component }, key) => (
+						<Box px={2} key={key}>
+							{component}
+						</Box>
 					))}
 				</Flex>
 				<Button

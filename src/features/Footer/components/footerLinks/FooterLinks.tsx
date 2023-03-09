@@ -10,12 +10,12 @@ export default function FooterLinks() {
 				md: 3,
 			}}>
 			<Grid templateColumns={"repeat(3, 1fr)"} gap={6}>
-				{FooterLinksData.map((linkData) => (
-					<VStack gap="2">
+				{FooterLinksData.map((linkData, key) => (
+					<VStack gap="2" key={key}>
 						<Text fontSize="lg">{linkData.header}</Text>
 						<VStack w="full" gap="2">
 							{linkData.links.map((link) => (
-								<Link color="white" w="full">
+								<Link color="white" w="full" key={link}>
 									{link}
 								</Link>
 							))}

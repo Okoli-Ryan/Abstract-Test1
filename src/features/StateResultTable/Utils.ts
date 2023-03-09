@@ -6,6 +6,9 @@ export type IResultItem = Omit<IStateResultData, "political_party_name"> & {
 
 export function TransformStateResults(originalData: IStateResult) {
 	const transformedData = {} as Record<string, Omit<IResultItem, "political_party_name">>;
+
+	if (Object.values(originalData).length === 0) return [];
+
 	for (const [key, value] of Object.entries(originalData)) {
 		const transformedValue = {} as Record<PoliticalPartyAcronym, number>;
 		let leading: PoliticalPartyAcronym = "APC";

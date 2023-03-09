@@ -34,7 +34,7 @@ var simplemaps_countrymap_mapdata = {
 		label_color: "#5f808f",
 		label_hover_color: "#d5ddec",
 		label_size: 18,
-		label_font: "Arial",
+		label_font: "Jost",
 		hide_labels: "no",
 		hide_eastern_labels: "no",
 
@@ -74,6 +74,7 @@ var simplemaps_countrymap_mapdata = {
 	state_specific: {
 		NGA2839: {
 			color: "#0aa83f",
+			description: " ",
 			name: "Borno",
 		},
 		NGA2841: {

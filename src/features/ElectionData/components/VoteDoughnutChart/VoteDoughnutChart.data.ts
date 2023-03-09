@@ -30,7 +30,7 @@ export const ParseData = (
 		datasets: [
 			{
 				data: resultData,
-				backgroundColor: [COLOR.LP, COLOR.PDP, COLOR.APC],
+				backgroundColor: [COLOR.LP, COLOR.PDP, COLOR.APC] as string[],
 			},
 		],
 	};
