@@ -10,9 +10,7 @@ export default function PresidentialRowChart() {
 
 	return (
 		<VStack w="full" mt="4">
-			<Text fontSize={20} textTransform="uppercase">
-				President
-			</Text>
+			<Text textTransform="uppercase">President</Text>
 			<Flex w="full" h="4">
 				{presidentalResults.map((result) => (
 					<PresidentialRowChartItem totalResult={totalResult} result={result} />

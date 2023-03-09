@@ -9,6 +9,8 @@ export type PoliticalPartyType =
 	| "People's Democratic Party"
 	| "All Progressives Congress";
 
+export type PoliticalPartyAcronym = "LP" | "PDP" | "APC";
+
 export interface IStateResult {
 	[state: string]: {
 		state_name: string;

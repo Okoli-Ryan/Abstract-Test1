@@ -6,6 +6,7 @@ import Footer from "./features/Footer";
 import Header from "./features/Header";
 import NigerianMap from "./features/NigerianMap";
 import { PageContainerProvider } from "./features/PageContainer/context";
+import StateResultTable from "./features/StateResultTable";
 
 function App() {
 	return (
@@ -15,6 +16,7 @@ function App() {
 					<Header />
 					<DataSelection />
 					<NigerianMap />
+					<StateResultTable />
 					<ElectionData />
 				</>
 			</PageContainerProvider>

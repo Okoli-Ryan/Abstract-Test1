@@ -6,7 +6,6 @@ import { usePageContainerContext } from '../PageContainer/context';
 
 export default function Map() {
 	const { mapResult } = usePageContainerContext();
-    console.log(window.mapdata)
 
 	useEffect(() => {
 		if (mapResult.length === 0) return;

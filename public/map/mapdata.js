@@ -257,13 +257,6 @@ var simplemaps_countrymap_mapdata = {
 			color: "#64ccff",
 		},
 	},
-	locations: {
-		0: {
-			lat: "9.083333",
-			lng: "7.533333",
-			name: "Abuja",
-		},
-	},
 	labels: {
 		0: {
 			name: "Borno",
