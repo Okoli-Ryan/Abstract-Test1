@@ -1,5 +1,6 @@
 import { Container } from "@chakra-ui/react";
 
+import LoadingContainer from "../../loadingContainer/LoadingContainer";
 import { PageContainerContext } from "./PageContainerContext";
 import { usePageContainer } from "./usePageContainer";
 
@@ -12,7 +13,9 @@ export const PageContainerProvider = ({ children }: IPageContainerProviderProps)
 
 	return (
 		<PageContainerContext.Provider value={response}>
-			<Container>{children}</Container>
+			<LoadingContainer>
+				<Container>{children}</Container>
+			</LoadingContainer>
 		</PageContainerContext.Provider>
 	);
 };

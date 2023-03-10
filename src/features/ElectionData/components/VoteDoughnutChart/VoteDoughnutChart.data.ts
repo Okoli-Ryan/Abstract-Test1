@@ -39,7 +39,7 @@ export const ParseData = (
 const DataLabel: PoliticalPartyType[] = [
 	"Labour Party",
 	"People's Democratic Party",
-	"All Progressives Congress",
+	"All Progressive Congress",
 ];
 
 type IOptions = ChartOptions<"doughnut">;

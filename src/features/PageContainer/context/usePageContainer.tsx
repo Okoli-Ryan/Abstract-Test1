@@ -4,12 +4,14 @@ import { IMapResult, IPresidentialResult, IStateResult } from '../../../core';
 import { GetAxiosData } from '../../../core/services';
 
 export const usePageContainer = () => {
+	const [isLoading, setIsLoading] = useState(true);
 	const [presidentalResults, setPresidentialResults] = useState<IPresidentialResult[]>([]);
 	const [stateResult, setStateResult] = useState<IStateResult>({});
 	const [mapResult, setMapResult] = useState<IMapResult[]>([]);
 
 	useEffect(() => {
 		async function getDetails() {
+			setIsLoading(true);
 			const [fetchedPresidentialResults, fetchedStateResults, fetchedMapResults] =
 				await Promise.allSettled([
 					GetAxiosData<IPresidentialResult[]>("GET_PRESIDENTIAL_RESULTS"),
@@ -21,12 +23,13 @@ export const usePageContainer = () => {
 				setPresidentialResults(fetchedPresidentialResults.value);
 			if (fetchedStateResults.status === "fulfilled")
 				setStateResult(fetchedStateResults.value);
-			if (fetchedMapResults.status === "fulfilled")
-				setMapResult(fetchedMapResults.value);
+			if (fetchedMapResults.status === "fulfilled") setMapResult(fetchedMapResults.value);
+
+			setIsLoading(false);
 		}
 
 		getDetails();
 	}, []);
 
-	return { presidentalResults, mapResult, stateResult };
+	return { presidentalResults, mapResult, stateResult, isLoading };
 };

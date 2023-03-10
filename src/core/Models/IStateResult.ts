@@ -7,7 +7,7 @@ export interface IStateResultData {
 export type PoliticalPartyType =
 	| "Labour Party"
 	| "People's Democratic Party"
-	| "All Progressives Congress";
+	| "All Progressive Congress";
 
 export type PoliticalPartyAcronym = "LP" | "PDP" | "APC";
 

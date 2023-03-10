@@ -43,7 +43,7 @@ function PresidentialRowChartItem({ result, totalResult }: IPresidentialRowChart
 
 	const percentageVote = ((result.candidates_vote * 100) / totalResult).toFixed(1);
 	let partyKey: keyof typeof COLOR = "LP";
-	if (result.political_party_name === "All Progressives Congress") partyKey = "APC";
+	if (result.political_party_name === "All Progressive Congress") partyKey = "APC";
 	if (result.political_party_name === "Labour Party") partyKey = "LP";
 	if (result.political_party_name === "People's Democratic Party") partyKey = "PDP";
 
